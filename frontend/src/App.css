@@ -1,0 +1,10 @@
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  color: var(--text-primary);
+}
+
+main {
+  padding: 24px;
+}

@@ -1,0 +1,15 @@
+name = "bookshelf-image-proxy"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# Bind an R2 Bucket for image storage
+[[r2_buckets]]
+binding = "BOOK_COVERS"
+bucket_name = "a-bookshelf"
+preview_bucket_name = "bookshelf-covers-preview"
+
+# Environment variables
+[vars]
+ALLOWED_ORIGINS = "https://detgrey.github.io/a-bookshelf,http://localhost:5173"
+MAX_IMAGE_SIZE = "10485760"  # 10MB in bytes
+R2_KEY_PREFIX = "covers"      # folder path inside bucket

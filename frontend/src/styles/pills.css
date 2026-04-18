@@ -1,0 +1,42 @@
+/* Pills and Tags */
+
+.pill-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  min-height: 20px;
+}
+
+.pill.ghost {
+  color: var(--accent);
+  border-color: rgba(0, 201, 167, 0.3);
+}
+
+/* Button pills - override button default font size */
+button.pill {
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  min-height: 20px;
+}
+
+button.pill-small {
+  font-size: 0.7rem;
+  padding: 3px 7px;
+}
+
+button.pill:active {
+  transform: scale(0.98);
+}

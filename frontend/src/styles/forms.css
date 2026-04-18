@@ -1,0 +1,82 @@
+/* Form Styles */
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  background: var(--panel-strong);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 16px;
+  min-height: 44px;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: 2px solid rgba(0, 201, 167, 0.4);
+  border-color: rgba(0, 201, 167, 0.4);
+}
+
+.field select option {
+  background: var(--panel-strong);
+  color: var(--text-primary);
+}
+
+/* Form Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* Form Stack */
+.stack {
+  display: grid;
+  gap: 14px;
+}
+
+/* Auth form layout */
+.auth {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* Form field with flex layout */
+.field[style*="flex: 1"] {
+  flex: 1;
+}
+
+.field[style*="minWidth: '180px'"] {
+  min-width: 180px;
+}
+
+.field[style*="minWidth: '160px'"] {
+  min-width: 160px;
+}

@@ -1,0 +1,120 @@
+/* Button Styles */
+
+.primary,
+.ghost,
+button.primary,
+button.ghost,
+button.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  font-size: 0.95rem;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #05060d;
+  box-shadow: 0 8px 20px rgba(0, 201, 167, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.primary:active {
+  transform: scale(0.98);
+}
+
+.primary:hover {
+  transform: translateY(-1px);
+}
+
+.ghost {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.ghost:active {
+  transform: scale(0.98);
+}
+
+.secondary {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
+  text-decoration: none;
+  font-size: 0.95rem;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+.secondary:hover {
+  background: var(--panel-strong);
+}
+
+.secondary:active {
+  transform: scale(0.98);
+}
+
+.secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Small button variants */
+.ghost[style*="font-size: 0.85rem"] {
+  padding: 6px 10px;
+  min-height: auto;
+}
+
+.ghost[style*="font-size: 0.9rem"] {
+  padding: 8px 12px;
+  min-height: auto;
+}
+
+/* Icon button */
+.btn-icon {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  opacity: 0.6;
+  transition: all 0.2s;
+  color: var(--text-primary);
+  min-height: auto;
+}
+
+.btn-icon:hover {
+  opacity: 1;
+  background: rgba(255, 123, 123, 0.1);
+  border-color: #ff7b7b;
+  color: #ff7b7b;
+}
+
+/* Delete button (red accent) */
+button[style*="color: #ff7b7b"] {
+  color: #ff7b7b;
+}
+
+button[style*="color: #ff7b7b"]:hover {
+  opacity: 0.8;
+}

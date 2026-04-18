@@ -1,0 +1,170 @@
+/* Sidebar Styles */
+
+.shelf-sidebar {
+  position: relative;
+  top: auto;
+}
+
+@media (min-width: 768px) {
+  .shelf-sidebar {
+    position: sticky;
+    top: 90px;
+  }
+}
+
+/* Shelf List */
+.shelf-list {
+  display: grid;
+  gap: 6px;
+}
+
+.shelf-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-family: inherit;
+  min-height: 44px;
+}
+
+.shelf-item > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.shelf-item.active {
+  background: var(--panel);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.shelf-item:active {
+  transform: scale(0.98);
+}
+
+.shelf-item:hover {
+  background: var(--panel);
+}
+
+.shelf-count {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Shelf Delete Button */
+.shelf-delete {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.shelf-delete:hover {
+  opacity: 1;
+  color: #ff7b7b;
+}
+
+@media (min-width: 768px) {
+  .shelf-delete {
+    opacity: 0;
+  }
+
+  .shelf-item:hover .shelf-delete {
+    opacity: 1;
+  }
+}
+
+/* Shelf Controls */
+.shelf-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shelf-search {
+  flex: 1;
+}
+
+.shelf-controls-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .shelf-controls {
+    gap: 12px;
+  }
+
+  .shelf-controls-row {
+    flex-wrap: nowrap;
+  }
+}
+
+/* Shelf Dropdown */
+.shelf-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: var(--background-gradient);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 6px;
+  min-width: 200px;
+  max-width: 90vw;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  display: grid;
+  gap: 2px;
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+
+.shelf-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: background 0.15s ease;
+  min-height: 44px;
+}
+
+.shelf-dropdown-item:active {
+  background: var(--panel);
+}
+
+.shelf-dropdown-item:hover {
+  background: var(--panel);
+}
+
+.shelf-dropdown-item span:first-child {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.1rem;
+}

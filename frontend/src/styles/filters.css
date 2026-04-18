@@ -1,0 +1,85 @@
+/* Filter Components Styles */
+
+/* Generic filter container */
+.filter-section {
+  margin-top: 12px;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.filter-header p {
+  margin: 0;
+}
+
+/* Filter controls */
+.filter-controls {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.filter-controls button {
+  font-size: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Filter options display */
+.filter-options {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+/* Genre and Chapter count filters */
+.genre-filter,
+.chapter-filter {
+  margin-top: 12px;
+}
+
+/* Preset options */
+.preset-options {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.preset-options button {
+  font-size: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.preset-options button.pill {
+  padding: 5px 10px;
+}
+
+.preset-options button.pill.ghost {
+  padding: 5px 10px;
+}
+
+/* Mode toggle buttons (Any/All, Max/Min, etc.) */
+.mode-toggle {
+  display: flex;
+  gap: 4px;
+}
+
+.mode-toggle button {
+  font-size: 0.75rem;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Clear filter button */
+.filter-clear {
+  cursor: pointer;
+}
