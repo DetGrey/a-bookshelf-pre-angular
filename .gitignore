@@ -36,6 +36,7 @@ Desktop.ini
 
 # Package manager
 package-lock.json
+!frontend/package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
