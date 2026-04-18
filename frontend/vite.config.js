@@ -1,18 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const basePath = process.env.VITE_BASE_PATH || '/a-bookshelf-pre-angular/'
+
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/a-bookshelf/',
+  base: basePath,
   plugins: [
     react(),
     {
       name: 'redirect-missing-trailing-slash',
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
-          if (req.url === '/a-bookshelf') {
+          const normalizedBase = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath
+          if (req.url === normalizedBase) {
             res.statusCode = 302
-            res.setHeader('Location', '/a-bookshelf/')
+            res.setHeader('Location', basePath)
             res.end()
             return
           }
@@ -21,9 +24,10 @@ export default defineConfig({
       },
       configurePreviewServer(server) {
         server.middlewares.use((req, res, next) => {
-          if (req.url === '/a-bookshelf') {
+          const normalizedBase = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath
+          if (req.url === normalizedBase) {
             res.statusCode = 302
-            res.setHeader('Location', '/a-bookshelf/')
+            res.setHeader('Location', basePath)
             res.end()
             return
           }

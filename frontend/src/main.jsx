@@ -13,6 +13,10 @@ import AddBook from './pages/AddBook.jsx'
 import BookDetails from './pages/BookDetails.jsx'
 import Bookshelf from './pages/Bookshelf.jsx'
 
+const basename = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -64,7 +68,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-], { basename: '/a-bookshelf' })
+], { basename })
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

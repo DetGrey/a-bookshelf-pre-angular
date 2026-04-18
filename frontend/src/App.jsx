@@ -6,14 +6,16 @@ import './App.css'
 function App() {
   const location = useLocation()
   const hideNav = location.pathname === '/login' || location.pathname === '/signup'
+  const basePath = import.meta.env.BASE_URL
+  const normalizedBase = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath
 
   // Handle missing trailing slash on reload
   useEffect(() => {
     const currentUrl = window.location.pathname
-    if (currentUrl === '/a-bookshelf' && !currentUrl.endsWith('/')) {
-      window.location.replace('/a-bookshelf/')
+    if (currentUrl === normalizedBase && !currentUrl.endsWith('/')) {
+      window.location.replace(basePath)
     }
-  }, [])
+  }, [basePath, normalizedBase])
 
   return (
     <div className="shell">
